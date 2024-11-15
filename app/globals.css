@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+	outline: 1px solid red;
+} */
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.animate-marquee {
+	white-space: nowrap;
+	animation: marquee 40s linear infinite;
+}
+
+@layer base {
+	:root {
+		--radius: 0.5rem;
+	}
+}
+
+body {
+	font-family: var(--font-sans);
+	@apply antialiased flex flex-col min-h-screen bg-bg relative;
+}
+
+.ad {
+	@apply relative bg-gray/10 text-center overflow-hidden;
+}
+.ad-list {
+	@apply whitespace-nowrap animate-marquee flex gap-8;
+}
+
+.h2-title-md {
+	@apply font-semibold text-xl mb-4;
+}
+.h2-title-lg {
+	@apply font-semibold text-xl md:text-[40px] text-black mb-4 md:mb-10;
+}
+
+.sidebar {
+	@apply relative flex items-center flex-auto;
+}
+.sidebar-container {
+	@apply items-center w-full;
+}
+.sidebar-input {
+	@apply bg-white rounded h-12;
+}
+.sidebar-button {
+	@apply absolute right-0 flex items-center hover:bg-transparent h-[95%] w-11;
+}
+
+.accord-wrapper {
+	@apply bg-white w-full p-4 rounded;
+}
+.accord-item {
+	@apply border-transparent;
+}
+.accord-trigger {
+	@apply bg-accent px-4 py-2 font-bold rounded;
+}
+.accord-content {
+	@apply mt-6 pb-0;
+}
+
+.section-md {
+	@apply mb-8;
+}
+
+.section-lg {
+	@apply mt-8 mb-8 md:my-16;
+}
+
+.logo {
+	@apply w-64 h-12;
+}
+
+.desktop {
+	@apply hidden md:flex;
+}
+
+.mobile {
+	@apply flex md:hidden;
+}
+
+.center {
+	@apply items-center justify-center;
+}
+
+.between {
+	@apply items-center justify-between;
+}
+
+.header {
+	@apply bg-accent sticky top-0 z-10;
+}
+.text {
+	@apply text-[10px] font-medium md:text-[14px] md:font-normal xl:font-normal xl:text-xs;
+}
+.header .level-text {
+	@apply font-normal -mt-2;
+}
+.header-desktop {
+	@apply container mx-auto desktop between py-6 gap-7;
+}
+.header-desktop .left,
+.header-desktop .right {
+	@apply flex gap-7;
+}
+.header-mobile {
+	@apply container mx-auto mobile between py-4 relative;
+}
+.header-mobile .right {
+	@apply flex items-center justify-end gap-2 ml-auto w-full;
+}
+.menu-trigger {
+	@apply flex flex-col center h-12 md:w-[71px] hover:bg-transparent;
+}
+.header .menu-trigger-text {
+	@apply md:flex-wrap text-xs font-normal;
+}
+.header .menu-content {
+	@apply w-screen max-w-full;
+}
+.magazins-trigger {
+	@apply flex flex-col center;
+}
+.header .magazins-content {
+	@apply w-auto rounded-2xl;
+}
+.header .magazins-list {
+	@apply flex flex-col gap-4;
+}
+.header .magazins-list-content {
+	@apply flex gap-4 items-center;
+}
+.header .magazins-list-texts {
+	@apply flex flex-col;
+}
+.header .magazins-list-text {
+	@apply font-semibold;
+}
+.header .lang-trigger {
+	@apply hidden xl:flex w-auto border-none bg-transparent shadow-none;
+}
+.header .lang-trigger-container {
+	@apply flex flex-col font-medium text-lg md:text-2xl;
+}
+.header .contact-trigger {
+	@apply hidden xl:flex items-center justify-between gap-1;
+}
+.header .contact-tel {
+	@apply text-xl font-medium mb-1;
+}
+.header .contact-content {
+	@apply rounded-2xl bg-white p-4;
+}
+.cart-trigger {
+	@apply flex flex-col center;
+}
+
+.main {
+	@apply container mx-auto flex-auto;
+}
+
+.warranty {
+	@apply max-w-4xl mx-auto md:p-2 xl:p-6 my-4;
+}
+.warranty ul {
+	@apply space-y-2 list-disc ml-6;
+}
+.warranty p {
+	@apply mt-6;
+}
